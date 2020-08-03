@@ -215,6 +215,7 @@ ED25519_FN(ed25519_sign_open_batch) (const unsigned char **m, size_t *mlen, cons
 
 	while (num > 3) {
 		batchsize = (num > max_batch_size) ? max_batch_size : num;
+		printf("batchsize %d\n", batchsize);
 
 		/* generate r (scalars[batchsize+1]..scalars[2*batchsize] */
 		ED25519_FN(ed25519_randombytes_unsafe) (batch.r, batchsize * 16);

@@ -429,6 +429,10 @@ ed25519_checksig_batch,(int *okay_out,
      * more confidence in the code, if `all_ok == 0` we can skip iterating
      * over oks since all the signatures were found to be valid.
      */
+    printf("res %d\n", res);
+    printf("all_ok %d\n", all_ok);
+    printf("((res == 0) && !all_ok)  %d\n", (res == 0) && !all_ok);
+    printf("((res < 0) && all_ok)) %d\n", (res < 0) && all_ok);
     tor_assert(((res == 0) && !all_ok) || ((res < 0) && all_ok));
 
     tor_free(ms);
